@@ -23,7 +23,7 @@ const Home = () => {
                         className="gradient-text"
                         style={{ fontSize: 'clamp(3rem, 8vw, 6rem)', lineHeight: 1.1, marginBottom: '1rem' }}
                     >
-                        Amin Aguilal
+                        Amine Aguilal
                     </motion.h1>
 
                     <motion.p
