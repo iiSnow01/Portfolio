@@ -1,16 +1,33 @@
-# React + Vite
+# Amin Aguilal - Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Portfolio Showcase](public/portfolio-showcase.webp)
 
-Currently, two official plugins are available:
+## Overview
+This is my personal portfolio website, built to showcase my career in **IT Project Management** and **Development**. It features a modern, high-performance UI with smooth animations.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
+-   **Framework**: React + Vite
+-   **Styling**: Vanilla CSS (Variables + Modern Layouts)
+-   **Animation**: Framer Motion
+-   **Deployment**: GitHub Pages / Vercel (Ready)
 
-## React Compiler
+## Features
+-   **Hero Section**: Animated introduction.
+-   **About Me**: Bio, skills, and languages.
+-   **Experience**: Timeline of professional roles.
+-   **Projects**: Showcase of NLP and AI work.
+-   **Contact**: Direct Gmail integration.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Getting Started
+1.  Clone the repo:
+    ```bash
+    git clone https://github.com/iiSnow01/Portfolio.git
+    ```
+2.  Install dependencies:
+    ```bash
+    npm install
+    ```
+3.  Run dev server:
+    ```bash
+    npm run dev
+    ```
