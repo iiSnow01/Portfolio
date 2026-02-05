@@ -20,6 +20,7 @@ const Layout = () => {
                     <ul style={{ display: 'flex', gap: '2rem' }}>
                         <li><a href="#home">Home</a></li>
                         <li><a href="#projects">Projects</a></li>
+                        <li><a href="#suggestions">Roadmap</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </nav>
