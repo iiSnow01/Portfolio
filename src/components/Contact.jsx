@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion'
+import { useApp } from '../context/AppContext'
 
 const Contact = () => {
+    const { t } = useApp()
+
     return (
         <section className="section-padding" id="contact" style={{ minHeight: '80vh', display: 'flex', alignItems: 'center' }}>
             <div className="container" style={{ width: '100%' }}>
@@ -11,7 +14,7 @@ const Contact = () => {
                     className="gradient-text"
                     style={{ fontSize: '3rem', marginBottom: '3rem', textAlign: 'center' }}
                 >
-                    Get In Touch
+                    {t.contact.title}
                 </motion.h2>
 
                 <div style={{ maxWidth: '600px', margin: '0 auto', textAlign: 'center' }}>
@@ -27,12 +30,12 @@ const Contact = () => {
                         }}
                     >
                         <p style={{ fontSize: '1.25rem', marginBottom: '2rem', color: 'var(--text-secondary)' }}>
-                            I am currently open to new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!
+                            {t.contact.description}
                         </p>
 
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', alignItems: 'center' }}>
                             <a
-                                href="https://mail.google.com/mail/?view=cm&fs=1&to=aguilalamine0@gmail.com"
+                                href={`mailto:${t.contact.email}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 style={{
@@ -45,12 +48,12 @@ const Contact = () => {
                                     fontSize: '1.1rem'
                                 }}
                             >
-                                aguilalamine0@gmail.com
+                                {t.contact.email}
                             </a>
 
                             <div style={{ color: 'var(--text-tertiary)' }}>
-                                <p>418-575-9959</p>
-                                <p>7947 avenue Hoffman, Quebec, Canada</p>
+                                <p>{t.contact.phone}</p>
+                                <p>{t.contact.address}</p>
                             </div>
                         </div>
                     </motion.div>

@@ -1,70 +1,160 @@
 import { motion } from 'framer-motion'
+import { useApp } from '../context/AppContext'
 
 const Experience = () => {
-    const experiences = [
-        {
-            role: "Assistant Optométriste et Vendeur",
-            company: "LAVUE.CA (Québec, Canada)",
-            period: "Oct 2024 – Aujourd’hui",
-            description: "Gestion des dossiers patients, assistance aux examens visuels, conseil client, et gestion des ventes et encaissements. Développement de compétences en communication et service client."
-        },
-        {
-            role: "Chargé de Projets TI",
-            company: "TROUVE TA VOIE (Paris, France)",
-            period: "Sept 2023 – Juil 2024",
-            description: "Conception et implémentation de pipelines NLP (BERT), intégration de bases vectorielles (FAISS, ChromaDB), optimisation de la recherche sémantique et collaboration technique pour l'intégration de solutions IA."
+    const { t } = useApp()
+    const experiences = t.experience.jobs
+
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.3,
+                delayChildren: 0.2
+            }
         }
-    ]
+    }
+
+    const itemVariants = {
+        hidden: { opacity: 0, x: -50, rotateX: -15 },
+        visible: {
+            opacity: 1,
+            x: 0,
+            rotateX: 0,
+            transition: {
+                type: "spring",
+                stiffness: 100,
+                damping: 12
+            }
+        }
+    }
+
+    const dotVariants = {
+        hidden: { scale: 0, opacity: 0 },
+        visible: {
+            scale: 1,
+            opacity: 1,
+            transition: { type: "spring", stiffness: 200, damping: 10, delay: 0.5 }
+        },
+        hover: {
+            scale: 1.5,
+            boxShadow: "0px 0px 15px var(--accent-primary)",
+            transition: { duration: 0.3, yoyo: Infinity }
+        }
+    }
 
     return (
-        <section className="section-padding" id="experience" style={{ background: 'var(--bg-secondary)' }}>
+        <section className="section-padding" id="experience" style={{ background: 'var(--bg-secondary)', overflow: 'hidden' }}>
             <div className="container">
-                <motion.h2
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    className="gradient-text"
-                    style={{ fontSize: '3rem', marginBottom: '4rem', textAlign: 'center' }}
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.8, y: -50 }}
+                    whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                    viewport={{ once: false, amount: 0.5 }}
+                    transition={{ type: "spring", bounce: 0.5, duration: 1 }}
+                    style={{ textAlign: 'center', marginBottom: '4rem' }}
                 >
-                    Experience
-                </motion.h2>
+                    <h2 className="gradient-text" style={{ fontSize: '3rem', display: 'inline-block' }}>
+                        {t.experience.title}
+                    </h2>
+                </motion.div>
 
-                <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+                <motion.div
+                    style={{ maxWidth: '800px', margin: '0 auto', position: 'relative' }}
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: false, margin: "-100px" }}
+                >
+                    {/* Animated side line */}
+                    <motion.div
+                        initial={{ height: 0 }}
+                        whileInView={{ height: '100%' }}
+                        viewport={{ once: false }}
+                        transition={{ duration: 1.5, ease: "easeInOut" }}
+                        style={{
+                            position: 'absolute',
+                            left: '0',
+                            top: '0',
+                            width: '2px',
+                            background: 'linear-gradient(to bottom, var(--accent-primary), transparent)',
+                            zIndex: 0
+                        }}
+                    />
+
                     {experiences.map((exp, index) => (
                         <motion.div
                             key={index}
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.2 }}
+                            variants={itemVariants}
+                            whileHover={{
+                                scale: 1.03,
+                                translateX: 10,
+                                backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                                borderRadius: '12px',
+                                boxShadow: '0 10px 30px rgba(0,0,0,0.1)'
+                            }}
                             style={{
                                 marginBottom: '3rem',
-                                paddingLeft: '2rem',
-                                borderLeft: '2px solid var(--accent-primary)',
-                                position: 'relative'
+                                padding: '1.5rem 1.5rem 1.5rem 2.5rem',
+                                position: 'relative',
+                                cursor: 'pointer',
+                                zIndex: 1
                             }}
                         >
-                            <div style={{
-                                position: 'absolute',
-                                left: '-9px',
-                                top: '0',
-                                width: '16px',
-                                height: '16px',
-                                background: 'var(--accent-primary)',
-                                borderRadius: '50%'
-                            }} />
+                            <motion.div
+                                variants={dotVariants}
+                                whileHover="hover"
+                                style={{
+                                    position: 'absolute',
+                                    left: '-7px',
+                                    top: '24px',
+                                    width: '16px',
+                                    height: '16px',
+                                    background: 'var(--accent-primary)',
+                                    borderRadius: '50%',
+                                    zIndex: 2
+                                }}
+                            />
 
-                            <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>{exp.role}</h3>
-                            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1rem', color: 'var(--text-tertiary)' }}>
-                                <span>{exp.company}</span>
-                                <span>{exp.period}</span>
+                            <motion.h3
+                                style={{ fontSize: '1.5rem', marginBottom: '0.5rem', color: 'var(--text-primary)' }}
+                                whileHover={{ color: 'var(--accent-primary)' }}
+                                transition={{ duration: 0.2 }}
+                            >
+                                {exp.role}
+                            </motion.h3>
+
+                            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1rem', color: 'var(--text-tertiary)', flexWrap: 'wrap', gap: '10px' }}>
+                                <motion.span
+                                    initial={{ opacity: 0.8 }}
+                                    whileHover={{ opacity: 1, fontWeight: 'bold' }}
+                                >
+                                    {exp.company}
+                                </motion.span>
+                                <motion.span
+                                    style={{
+                                        background: 'var(--bg-tertiary)',
+                                        border: '1px solid var(--border-color)',
+                                        padding: '4px 12px',
+                                        borderRadius: '20px',
+                                        fontSize: '0.9rem'
+                                    }}
+                                    whileHover={{ scale: 1.1, backgroundColor: 'var(--accent-primary)', color: '#fff', borderColor: 'var(--accent-primary)' }}
+                                >
+                                    {exp.period}
+                                </motion.span>
                             </div>
-                            <p style={{ color: 'var(--text-secondary)', lineHeight: '1.6' }}>
+
+                            <motion.p
+                                style={{ color: 'var(--text-secondary)', lineHeight: '1.6' }}
+                                initial={{ opacity: 0.8 }}
+                                whileHover={{ opacity: 1 }}
+                            >
                                 {exp.description}
-                            </p>
+                            </motion.p>
                         </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </div>
         </section>
     )
