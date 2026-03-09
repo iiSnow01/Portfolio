@@ -1,9 +1,17 @@
 import { Outlet } from 'react-router-dom'
-import { motion } from 'framer-motion'
+import { motion, useScroll, useSpring } from 'framer-motion'
 import { useApp } from '../context/AppContext'
 
 const Layout = () => {
     const { lang, theme, toggleLang, toggleTheme, t } = useApp()
+
+    // Creative Scroll Animation: Progress Bar
+    const { scrollYProgress } = useScroll()
+    const scaleX = useSpring(scrollYProgress, {
+        stiffness: 100,
+        damping: 30,
+        restDelta: 0.001
+    })
 
     const navLinks = [
         { name: t.nav.home, href: '#home' },
@@ -13,6 +21,22 @@ const Layout = () => {
 
     return (
         <div className="layout">
+            {/* Scroll Progress Indicator */}
+            <motion.div
+                style={{
+                    scaleX,
+                    position: "fixed",
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    height: "4px",
+                    originX: 0,
+                    background: "var(--accent-gradient)",
+                    zIndex: 1000,
+                    boxShadow: "0 0 15px var(--accent-primary)"
+                }}
+            />
+
             <header style={{
                 position: 'fixed',
                 top: 0,
@@ -22,7 +46,8 @@ const Layout = () => {
                 zIndex: 100,
                 backdropFilter: 'blur(10px)',
                 background: theme === 'dark' ? 'rgba(10, 10, 10, 0.8)' : 'rgba(255, 255, 255, 0.8)',
-                borderBottom: '1px solid var(--border-color)'
+                borderBottom: '1px solid var(--border-color)',
+                marginTop: '4px' // Push down slightly for the progress bar
             }}>
                 <nav className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
 

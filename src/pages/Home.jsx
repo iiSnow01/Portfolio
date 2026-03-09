@@ -1,13 +1,19 @@
-import { motion } from 'framer-motion'
+import { motion, useScroll, useTransform } from 'framer-motion'
 import About from '../components/About'
 import Experience from '../components/Experience'
 import Projects from '../components/Projects'
 import Contact from '../components/Contact'
 import { useApp } from '../context/AppContext'
+import { useRef } from 'react'
 
 const Home = () => {
     const { t } = useApp()
     const fullName = t.home.title
+
+    // Creative Scroll Animation: Parallax Effect for Hero
+    const { scrollY } = useScroll()
+    const yHero = useTransform(scrollY, [0, 800], [0, 400]) // As you scroll down 800px, move text down by 400px (slower perceived scrolling)
+    const opacityHero = useTransform(scrollY, [0, 400], [1, 0]) // Fade out based on scroll
 
     const nameContainerVariants = {
         hidden: { opacity: 0 },
@@ -36,6 +42,7 @@ const Home = () => {
     return (
         <div className="page home">
             <section className="hero" id="home" style={{
+                position: 'relative',
                 minHeight: '100vh',
                 display: 'flex',
                 alignItems: 'center',
@@ -44,7 +51,10 @@ const Home = () => {
                 paddingTop: '80px',
                 overflow: 'hidden'
             }}>
-                <div className="container">
+                <motion.div
+                    className="container"
+                    style={{ y: yHero, opacity: opacityHero, zIndex: 1 }}
+                >
                     <motion.div
                         key={fullName} // re-render on translation change
                         variants={nameContainerVariants}
@@ -90,13 +100,55 @@ const Home = () => {
                     >
                         {t.home.description}
                     </motion.p>
-                </div>
+                </motion.div>
+
+                {/* Scroll Indicator Arrow Animation */}
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 2, duration: 1 }}
+                    style={{
+                        position: 'absolute',
+                        bottom: '40px',
+                        left: '50%',
+                        x: '-50%',
+                        zIndex: 2,
+                        opacity: opacityHero
+                    }}
+                >
+                    <motion.div
+                        animate={{ y: [0, 10, 0] }}
+                        transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+                        style={{
+                            width: '30px',
+                            height: '50px',
+                            border: '2px solid var(--text-secondary)',
+                            borderRadius: '15px',
+                            display: 'flex',
+                            justifyContent: 'center',
+                            paddingTop: '8px'
+                        }}
+                    >
+                        <motion.div
+                            animate={{ y: [0, 15], opacity: [1, 0] }}
+                            transition={{ repeat: Infinity, duration: 1.5, ease: "easeOut" }}
+                            style={{
+                                width: '4px',
+                                height: '8px',
+                                background: 'var(--accent-primary)',
+                                borderRadius: '2px'
+                            }}
+                        />
+                    </motion.div>
+                </motion.div>
             </section>
 
-            <About />
-            <Experience />
-            <Projects />
-            <Contact />
+            <div style={{ position: 'relative', zIndex: 10, background: 'var(--bg-primary)' }}>
+                <About />
+                <Experience />
+                <Projects />
+                <Contact />
+            </div>
         </div>
     )
 }
