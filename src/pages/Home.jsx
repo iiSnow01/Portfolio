@@ -143,7 +143,7 @@ const Home = () => {
                 </motion.div>
             </section>
 
-            <div style={{ position: 'relative', zIndex: 10, background: 'var(--bg-primary)' }}>
+            <div style={{ position: 'relative', zIndex: 10 }}>
                 <About />
                 <Experience />
                 <Projects />

@@ -45,7 +45,7 @@ const Experience = () => {
     }
 
     return (
-        <section className="section-padding" id="experience" style={{ background: 'var(--bg-secondary)', overflow: 'hidden' }}>
+        <section className="section-padding" id="experience" style={{ overflow: 'hidden' }}>
             <div className="container">
                 <motion.div
                     initial={{ opacity: 0, scale: 0.8, y: -50 }}
