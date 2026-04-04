@@ -14,27 +14,51 @@ const Projects = () => {
         target: targetRef,
     })
 
-    const x = useTransform(scrollYProgress, [0, 1], ["0%", "-85%"]) // Stop before the end so the last item is visible
+    const x = useTransform(scrollYProgress, [0, 1], ['0%', '-85%']) // Stop before the end so the last item is visible
 
     useEffect(() => {
+        const controller = new AbortController()
+
         const fetchRepos = async () => {
             try {
-                const response = await fetch('https://api.github.com/users/iiSnow01/repos?sort=updated&per_page=6');
-                if (!response.ok) {
-                    throw new Error('Failed to fetch repositories');
-                }
-                const data = await response.json();
-                setProjects(data.slice(0, 6));
-                setLoading(false);
-            } catch (err) {
-                console.error("Error fetching GitHub projects:", err);
-                setError(err.message);
-                setLoading(false);
-            }
-        };
+                setLoading(true)
+                setError(null)
 
-        fetchRepos();
-    }, []);
+                const response = await fetch('https://api.github.com/users/iiSnow01/repos?sort=updated&per_page=12', {
+                    signal: controller.signal,
+                    headers: {
+                        Accept: 'application/vnd.github+json',
+                    },
+                })
+
+                if (!response.ok) {
+                    throw new Error(`Failed to fetch repositories (${response.status})`)
+                }
+
+                const data = await response.json()
+                const curatedProjects = data
+                    .filter((repo) => !repo.fork)
+                    .slice(0, 6)
+
+                setProjects(curatedProjects)
+            } catch (err) {
+                if (err.name !== 'AbortError') {
+                    console.error('Error fetching GitHub projects:', err)
+                    setError(err.message)
+                }
+            } finally {
+                if (!controller.signal.aborted) {
+                    setLoading(false)
+                }
+            }
+        }
+
+        fetchRepos()
+
+        return () => controller.abort()
+    }, [])
+
+    const fallbackDescription = t.projects.noDescription || 'No description provided.'
 
     return (
         <section id="projects" ref={targetRef} style={{ position: 'relative', height: '300vh', background: 'var(--bg-primary)' }}>
@@ -64,7 +88,7 @@ const Projects = () => {
                             >
                                 <motion.div
                                     animate={{ rotate: 360 }}
-                                    transition={{ repeat: Infinity, duration: 1, ease: "linear" }}
+                                    transition={{ repeat: Infinity, duration: 1, ease: 'linear' }}
                                     style={{ width: '40px', height: '40px', border: '3px solid var(--border-color)', borderTopColor: 'var(--accent-primary)', borderRadius: '50%', marginBottom: '1rem' }}
                                 />
                                 <p style={{ fontSize: '1.1rem' }}>{t.projects.loading}</p>
@@ -90,7 +114,7 @@ const Projects = () => {
                                 key="content"
                                 style={{ x, display: 'flex', gap: '4rem', padding: '0 5vw' }}
                             >
-                                {projects.map((project, index) => (
+                                {projects.map((project) => (
                                     <motion.div
                                         key={project.id}
                                         whileHover={{ y: -15, scale: 1.02, boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)' }}
@@ -103,9 +127,9 @@ const Projects = () => {
                                             flexDirection: 'column',
                                             width: '450px',
                                             height: '500px',
-                                            flexShrink: 0, /* Prevent shrinking in flex container */
+                                            flexShrink: 0,
                                             position: 'relative',
-                                            transition: 'var(--transition-normal)'
+                                            transition: 'var(--transition-normal)',
                                         }}
                                     >
                                         <div style={{ padding: '3rem', flex: 1, display: 'flex', flexDirection: 'column' }}>
@@ -119,13 +143,13 @@ const Projects = () => {
                                                     fontWeight: 'bold',
                                                     display: 'flex',
                                                     alignItems: 'center',
-                                                    gap: '0.75rem'
+                                                    gap: '0.75rem',
                                                 }}>
                                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
                                                     {project.language || 'Code'}
                                                 </span>
                                                 <div style={{ display: 'flex', gap: '1rem', color: 'var(--text-tertiary)', fontSize: '1rem' }}>
-                                                    <span title={t.projects.stars || "Stars"} style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                                                    <span title={t.projects.stars || 'Stars'} style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                                                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
                                                         {project.stargazers_count}
                                                     </span>
@@ -137,13 +161,14 @@ const Projects = () => {
                                             </h3>
 
                                             <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', lineHeight: '1.7', marginBottom: '2rem', flex: 1, overflow: 'hidden', textOverflow: 'ellipsis', display: '-webkit-box', WebkitLineClamp: 4, WebkitBoxOrient: 'vertical' }}>
-                                                {project.description || "Aucune description fournie / No description provided."}
+                                                {project.description || fallbackDescription}
                                             </p>
 
                                             <a
                                                 href={project.html_url}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
+                                                aria-label={`${t.projects.viewProject}: ${project.name}`}
                                                 style={{
                                                     display: 'flex',
                                                     alignItems: 'center',
@@ -158,17 +183,17 @@ const Projects = () => {
                                                     fontWeight: 'bold',
                                                     border: '1px solid var(--border-color)',
                                                     transition: 'all 0.3s ease',
-                                                    marginTop: 'auto'
+                                                    marginTop: 'auto',
                                                 }}
                                                 onMouseEnter={(e) => {
-                                                    e.currentTarget.style.background = 'var(--accent-gradient)';
-                                                    e.currentTarget.style.color = '#fff';
-                                                    e.currentTarget.style.border = '1px solid transparent';
+                                                    e.currentTarget.style.background = 'var(--accent-gradient)'
+                                                    e.currentTarget.style.color = '#fff'
+                                                    e.currentTarget.style.border = '1px solid transparent'
                                                 }}
                                                 onMouseLeave={(e) => {
-                                                    e.currentTarget.style.background = 'var(--bg-tertiary)';
-                                                    e.currentTarget.style.color = 'var(--text-primary)';
-                                                    e.currentTarget.style.border = '1px solid var(--border-color)';
+                                                    e.currentTarget.style.background = 'var(--bg-tertiary)'
+                                                    e.currentTarget.style.color = 'var(--text-primary)'
+                                                    e.currentTarget.style.border = '1px solid var(--border-color)'
                                                 }}
                                             >
                                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>

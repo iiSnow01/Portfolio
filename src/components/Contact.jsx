@@ -36,8 +36,6 @@ const Contact = () => {
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', alignItems: 'center' }}>
                             <a
                                 href={`mailto:${t.contact.email}`}
-                                target="_blank"
-                                rel="noopener noreferrer"
                                 style={{
                                     display: 'inline-block',
                                     padding: '1rem 2rem',

@@ -41,7 +41,9 @@ export const translations = {
             title: "Key Projects",
             loading: "Loading projects...",
             error: "Failed to load projects.",
-            viewProject: "View on GitHub"
+            viewProject: "View on GitHub",
+            noDescription: "No description provided.",
+            stars: "Stars"
         },
         contact: {
             title: "Get In Touch",
@@ -98,7 +100,9 @@ export const translations = {
             title: "Projets Cl\u00e9s",
             loading: "Chargement des projets...",
             error: "\u00c9chec du chargement des projets.",
-            viewProject: "Voir sur GitHub"
+            viewProject: "Voir sur GitHub",
+            noDescription: "Aucune description fournie.",
+            stars: "Étoiles"
         },
         contact: {
             title: "Me Contacter",
