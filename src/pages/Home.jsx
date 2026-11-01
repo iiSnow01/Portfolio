@@ -1,158 +1,33 @@
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 import About from '../components/About'
 import Experience from '../components/Experience'
 import Credentials from '../components/Credentials'
 import Projects from '../components/Projects'
 import Contact from '../components/Contact'
 import { useApp } from '../context/AppContext'
-import { useRef } from 'react'
 
-const Home = () => {
-    const { t } = useApp()
-    const fullName = t.home.title
-
-    // Creative Scroll Animation: Parallax Effect for Hero
-    const { scrollY } = useScroll()
-    const yHero = useTransform(scrollY, [0, 800], [0, 400]) // As you scroll down 800px, move text down by 400px (slower perceived scrolling)
-    const opacityHero = useTransform(scrollY, [0, 400], [1, 0]) // Fade out based on scroll
-
-    const nameContainerVariants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.1,
-                delayChildren: 0.2
-            }
-        }
-    }
-
-    const letterVariants = {
-        hidden: { opacity: 0, y: -80 },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: {
-                type: "spring",
-                damping: 12,
-                stiffness: 150
-            }
-        }
-    }
-
-    return (
-        <div className="page home">
-            <section className="hero" id="home" style={{
-                position: 'relative',
-                minHeight: '100vh',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                textAlign: 'center',
-                paddingTop: '80px',
-                overflow: 'hidden'
-            }}>
-                <motion.div
-                    className="container"
-                    style={{ y: yHero, opacity: opacityHero, zIndex: 1 }}
-                >
-                    <motion.div
-                        key={fullName} // re-render on translation change
-                        variants={nameContainerVariants}
-                        initial="hidden"
-                        animate="visible"
-                        className="gradient-text"
-                        style={{ fontSize: 'clamp(3rem, 8vw, 6rem)', lineHeight: 1.1, marginBottom: '1rem', fontWeight: 'bold' }}
-                    >
-                        {fullName.split("").map((char, index) => (
-                            <motion.span
-                                key={index}
-                                variants={letterVariants}
-                                style={{
-                                    display: 'inline-block',
-                                    whiteSpace: char === " " ? "pre" : "normal"
-                                }}
-                                whileHover={{
-                                    y: -10,
-                                    color: 'var(--accent-primary)',
-                                    textShadow: '0 0 15px var(--accent-primary)',
-                                    transition: { type: 'spring', stiffness: 300 }
-                                }}
-                            >
-                                {char}
-                            </motion.span>
-                        ))}
-                    </motion.div>
-
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 1.2, duration: 0.8 }}
-                        style={{ fontSize: '1.5rem', color: 'var(--text-primary)', marginBottom: '1rem' }}
-                    >
-                        {t.home.subtitle}
-                    </motion.p>
-
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 1.4, duration: 0.8 }}
-                        style={{ fontSize: '1.1rem', color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto' }}
-                    >
-                        {t.home.description}
-                    </motion.p>
-                </motion.div>
-
-                {/* Scroll Indicator Arrow Animation */}
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 2, duration: 1 }}
-                    style={{
-                        position: 'absolute',
-                        bottom: '40px',
-                        left: '50%',
-                        x: '-50%',
-                        zIndex: 2,
-                        opacity: opacityHero
-                    }}
-                >
-                    <motion.div
-                        animate={{ y: [0, 10, 0] }}
-                        transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-                        style={{
-                            width: '30px',
-                            height: '50px',
-                            border: '2px solid var(--text-secondary)',
-                            borderRadius: '15px',
-                            display: 'flex',
-                            justifyContent: 'center',
-                            paddingTop: '8px'
-                        }}
-                    >
-                        <motion.div
-                            animate={{ y: [0, 15], opacity: [1, 0] }}
-                            transition={{ repeat: Infinity, duration: 1.5, ease: "easeOut" }}
-                            style={{
-                                width: '4px',
-                                height: '8px',
-                                background: 'var(--accent-primary)',
-                                borderRadius: '2px'
-                            }}
-                        />
-                    </motion.div>
-                </motion.div>
-            </section>
-
-            <div style={{ position: 'relative', zIndex: 10 }}>
-                <About />
-                <Experience />
-                <Credentials />
-                <Projects />
-                <Contact />
-            </div>
-        </div>
-    )
+export default function Home() {
+    const { lang, t } = useApp()
+    const fr = lang === 'fr'
+    const reduced = useReducedMotion()
+    return <>
+        <section className="hero container" id="home">
+            <motion.div className="hero-copy" initial={reduced ? false : { opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+                <p className="availability"><span />{fr ? 'Ouvert aux opportunités' : 'Open to opportunities'}</p>
+                <p className="eyebrow">{t.home.subtitle}</p>
+                <h1>Amine<br /><span>Aguilal.</span></h1>
+                <p className="hero-description">{fr ? 'Du code aux applications. Je développe avec Python et React, avec un intérêt pour les outils utiles et la data.' : 'From code to applications. I build with Python and React, with a focus on useful tools and data.'}</p>
+                <div className="hero-actions"><a className="button primary" href="#projects">{fr ? 'Voir mes projets' : 'Explore projects'} <span>↗</span></a><a className="button" href="#contact">{fr ? 'Me contacter' : 'Get in touch'} <span>↗</span></a></div>
+                <p className="hero-location">Casablanca, {fr ? 'Maroc' : 'Morocco'} <span>·</span> Python / React.js / PHP / MySQL</p>
+            </motion.div>
+            <motion.div className="hero-visual" aria-hidden="true" initial={reduced ? false : { opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.7 }}>
+                <div className="code-window"><div className="window-bar"><span className="window-dots">● ● ●</span><span>developer.py</span><span>PY</span></div>
+                <div className="code-body"><p><i>01</i> <em>class</em> <b>Developer</b>:</p><p><i>02</i> &nbsp; name = <q>Amine Aguilal</q></p><p><i>03</i> &nbsp; based_in = <q>Casablanca</q></p><p><i>04</i> &nbsp; stack = [</p><p><i>05</i> &nbsp; &nbsp; <q>Python</q>, <q>React.js</q>,</p><p><i>06</i> &nbsp; &nbsp; <q>PHP</q>, <q>MySQL</q></p><p><i>07</i> &nbsp; ]</p><p><i>08</i> &nbsp; <span className="code-comment"># Build. Learn. Improve.</span></p></div>
+                <div className="window-status"><span>●</span> {fr ? 'Toujours en apprentissage' : 'Always learning'}<span>UTF-8</span></div></div>
+                <div className="visual-caption"><span>01 — WEB</span><span>02 — PYTHON</span><span>03 — DATA</span></div>
+            </motion.div>
+        </section>
+        <div className="stack-strip"><div className="container"><span>PYTHON</span><span>REACT.JS</span><span>PHP / MYSQL</span><span>FLASK</span><span>GIT</span></div></div>
+        <Projects /><About /><Experience /><Credentials /><Contact />
+    </>
 }
-
-export default Home

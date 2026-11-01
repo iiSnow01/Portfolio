@@ -1,61 +1,31 @@
 :root {
-  /* Colors */
-  --bg-primary: #0a0a0a;
-  --bg-secondary: #111111;
-  --bg-tertiary: #1a1a1a;
-  
-  --text-primary: #ffffff;
-  --text-secondary: #a1a1aa;
-  --text-tertiary: #71717a;
-  
-  --accent-primary: #3b82f6; /* Electric Blue */
-  --accent-secondary: #8b5cf6; /* Violet */
-  --accent-gradient: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-  
-  --border-color: #27272a;
-  
-  /* Typography */
+  color-scheme: dark;
+  --bg-primary: #101216;
+  --bg-secondary: #171b22;
+  --bg-tertiary: #222833;
+  --text-primary: #f2f4f8;
+  --text-secondary: #acb6c5;
+  --text-tertiary: #96a3b6;
+  --accent-primary: #78aaff;
+  --accent-secondary: #a7c9ff;
+  --accent-gradient: linear-gradient(110deg, #78aaff, #c4dcff);
+  --border-color: #2a313d;
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-display: 'Outfit', system-ui, -apple-system, sans-serif;
-  
-  /* Spacing */
-  --space-xs: 0.5rem;
-  --space-sm: 1rem;
-  --space-md: 2rem;
-  --space-lg: 4rem;
-  --space-xl: 8rem;
-  
-  /* Animation */
-  --transition-fast: 0.2s ease;
-  --transition-normal: 0.3s ease;
-  --transition-slow: 0.5s ease;
-  
-  /* Layout */
-  --container-width: 1200px;
-  --header-height: 80px;
+  --space-sm: 1.5rem;
+  --space-lg: 6rem;
+  --container-width: 1160px;
 }
-
 [data-theme='light'] {
-  --bg-primary: #ffffff;
-  --bg-secondary: #f4f4f5;
-  --bg-tertiary: #e4e4e7;
-  
-  --text-primary: #09090b;
-  --text-secondary: #3f3f46;
-  --text-tertiary: #71717a;
-  
-  --border-color: #d4d4d8;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
-  font-family: var(--font-sans);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  transition: background-color var(--transition-normal), color var(--transition-normal);
+  color-scheme: light;
+  --bg-primary: #f8fafc;
+  --bg-secondary: #eef2f7;
+  --bg-tertiary: #e2e8f0;
+  --text-primary: #142033;
+  --text-secondary: #48566c;
+  --text-tertiary: #50617a;
+  --accent-primary: #2457c6;
+  --accent-secondary: #193e93;
+  --accent-gradient: linear-gradient(110deg, #2457c6, #193e93);
+  --border-color: #d0d8e5;
 }

@@ -1,33 +1,24 @@
-# Amin Aguilal - Portfolio
+# Amine Aguilal - Portfolio
 
-![Portfolio Showcase](public/portfolio-showcase.webp)
+A bilingual developer portfolio with a charcoal and blue design, responsive project cards, a professional timeline, education, certifications, and a CV request contact link.
 
-## Overview
-This is my personal portfolio website, built to showcase my career in **IT Project Management** and **Development**. It features a modern, high-performance UI with smooth animations.
+## Stack
 
-## Tech Stack
--   **Framework**: React + Vite
--   **Styling**: Vanilla CSS (Variables + Modern Layouts)
--   **Animation**: Framer Motion
--   **Deployment**: GitHub Pages / Vercel (Ready)
+React, Vite, vanilla CSS, and a short Framer Motion introduction that respects reduced-motion preferences.
 
-## Features
--   **Hero Section**: Animated introduction.
--   **About Me**: Bio, skills, and languages.
--   **Experience**: Timeline of professional roles.
--   **Projects**: Showcase of NLP and AI work.
--   **Contact**: Direct Gmail integration.
+## Development
 
-## Getting Started
-1.  Clone the repo:
-    ```bash
-    git clone https://github.com/iiSnow01/Portfolio.git
-    ```
-2.  Install dependencies:
-    ```bash
-    npm install
-    ```
-3.  Run dev server:
-    ```bash
-    npm run dev
-    ```
+```sh
+npm ci
+npm run dev
+npm run build
+```
+
+Production output is written to `dist/`. The existing website is https://snowow.netlify.app/.
+
+## Content
+
+- `src/context/translations.js`: English and French profile, employment dates, education, certifications, and contact details.
+- `src/components/Projects.jsx`: Three featured public repositories with descriptions and technology tags. Screenshot assets are loaded from their source repositories, with a local code illustration fallback.
+
+Project cards link to source code; no unverified live demos are advertised. CV Genius's LinkedIn import is explicitly described as simulated.
