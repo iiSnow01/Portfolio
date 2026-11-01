@@ -1,120 +1,252 @@
 export const translations = {
-    en: {
-        home: {
-            title: "Amine Aguilal",
-            subtitle: "Junior Full-Stack Developer",
-            description: "Python, React.js, PHP/MySQL | E-commerce & Applications"
+    "en": {
+        "home": {
+            "title": "Amine Aguilal",
+            "subtitle": "Junior Full-Stack Developer",
+            "description": "Python, React.js, PHP/MySQL | E-commerce & Applications"
         },
-        about: {
-            title: "About Me",
-            p1: "I am a junior full-stack developer based in Morocco with a BTS in Software Development. My focus is Python, React.js, and PHP/MySQL for e-commerce and application development.",
-            p2: "My background also includes IT project management, NLP, and customer service. I am open to opportunities where I can contribute to web applications, solve practical problems, and continue growing as a developer.",
-            skillsTitle: "Skills & Languages",
-            technical: "Technical",
-            languages: "Languages",
-            langsList: ['French', 'English', 'Arabic']
+        "about": {
+            "title": "About Me",
+            "p1": "I am a junior full-stack developer based in Morocco with a BTS in Software Development. My focus is Python, React.js, and PHP/MySQL for e-commerce and application development.",
+            "p2": "My background also includes data science, NLP, technical support, and customer service. I am open to opportunities where I can contribute to web applications, solve practical problems, and continue growing as a developer.",
+            "skillsTitle": "Skills & Languages",
+            "technical": "Technical",
+            "languages": "Languages",
+            "langsList": [
+                "French",
+                "English",
+                "Arabic"
+            ]
         },
-        experience: {
-            title: "Experience",
-            jobs: [
+        "experience": {
+            "title": "Experience",
+            "jobs": [
                 {
-                    role: "Crew Member",
-                    company: "Poulet Rouge",
-                    period: "Dec 2024 \u2013 Today",
-                    description: "Responsible for meal preparation, customer service, and maintaining a clean and efficient work environment in a high-volume restaurant."
+                    "role": "Back-office Officer",
+                    "company": "TELUS Digital AI Data Solutions",
+                    "period": "Jul 2026 – Present",
+                    "details": "Casablanca-Settat, Morocco · On-site · Full-time",
+                    "description": ""
                 },
                 {
-                    role: "Assistant Optometrist and Salesperson",
-                    company: "LAVUE.CA (Quebec, Canada)",
-                    period: "oct 2024 \u2013 Sept 2025",
-                    description: "Patient record management, visual exam assistance, customer advice, and sales/cash management. Developed communication and customer service skills."
+                    "role": "Technical Support",
+                    "company": "Rogers Communications",
+                    "period": "Apr 2026 – Jul 2026",
+                    "details": "Casablanca-Settat, Morocco · On-site · Permanent full-time",
+                    "description": ""
                 },
                 {
-                    role: "IT Project Manager",
-                    company: "TROUVE TA VOIE (Paris, France)",
-                    period: "Sept 2023 \u2013 July 2024",
-                    description: "Design and implementation of NLP pipelines (BERT), integration of vector databases (FAISS, ChromaDB), semantic search optimization, and technical collaboration for AI solution integration."
+                    "role": "Shift Manager",
+                    "company": "McDonald's",
+                    "period": "Mar 2026 – Apr 2026",
+                    "details": "Quebec, Canada · On-site · Permanent full-time",
+                    "description": ""
+                },
+                {
+                    "role": "Crew Member",
+                    "company": "Groupe Poulet Rouge",
+                    "period": "Oct 2025 – Apr 2026",
+                    "details": "Permanent full-time",
+                    "description": "Responsible for meal preparation, customer service, and maintaining a clean and efficient work environment in a high-volume restaurant."
+                },
+                {
+                    "role": "Optometric Assistant",
+                    "company": "LAVUE.CA",
+                    "period": "Nov 2024 – Dec 2025",
+                    "details": "Quebec, Canada · On-site · Full-time",
+                    "description": "Patient record management, visual exam assistance, customer advice, and sales/cash management. Developed communication and customer service skills."
+                },
+                {
+                    "role": "Data Science Intern",
+                    "company": "TrouveTaVoie",
+                    "period": "Jun 2023 – Dec 2025",
+                    "details": "Paris · Remote · Internship",
+                    "description": "Design and implementation of NLP pipelines (BERT), integration of vector databases (FAISS, ChromaDB), semantic search optimization, and technical collaboration for AI solution integration."
                 }
             ]
         },
-        projects: {
-            title: "Key Projects",
-            loading: "Loading projects...",
-            error: "Failed to load projects.",
-            viewProject: "View on GitHub",
-            noDescription: "No description provided.",
-            stars: "Stars"
+        "projects": {
+            "title": "Key Projects",
+            "loading": "Loading projects...",
+            "error": "Failed to load projects.",
+            "viewProject": "View on GitHub",
+            "noDescription": "No description provided.",
+            "stars": "Stars"
         },
-        contact: {
-            title: "Get In Touch",
-            description: "I am currently open to new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!",
-            email: "aguilalamine0@gmail.com",
-            phone: "418-575-9959",
-            address: "Morocco"
+        "contact": {
+            "title": "Get In Touch",
+            "description": "I am currently open to new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!",
+            "email": "aguilalamine0@gmail.com",
+            "phone": "418-575-9959",
+            "address": "Morocco"
         },
-        nav: {
-            home: "Home",
-            projects: "Projects",
-            contact: "Contact"
+        "nav": {
+            "home": "Home",
+            "projects": "Projects",
+            "contact": "Contact"
+        },
+        "education": {
+            "title": "Education",
+            "items": [
+                {
+                    "school": "BTS Dsi",
+                    "qualification": "Brevet de technicien supérieur (BTS), Computer Science",
+                    "period": "Sep 2023 – Sep 2025"
+                },
+                {
+                    "school": "BTS",
+                    "qualification": "Brevet de technicien supérieur (BTS), Artificial Intelligence",
+                    "period": "2022 – 2023"
+                },
+                {
+                    "school": "Lycée Technique Anoual",
+                    "qualification": "Technical Baccalaureate in Electrical Engineering",
+                    "period": ""
+                }
+            ]
+        },
+        "certifications": {
+            "title": "Certifications",
+            "credentialLabel": "Credential ID",
+            "items": [
+                {
+                    "title": "Programming for Everybody (Getting Started with Python)",
+                    "issuer": "University of Michigan",
+                    "period": "Issued Dec 2023",
+                    "credential": "GX2PDY26HXTN"
+                },
+                {
+                    "title": "100 Days of Code: The Complete Python Pro Bootcamp for 2023",
+                    "issuer": "Udemy",
+                    "period": "Issued Nov 2023 · Listed expiry: Dec 2023",
+                    "credential": "UC-60da7117-6af0-4629-b38f-e04027ba27b6"
+                }
+            ]
         }
     },
-    fr: {
-        home: {
-            title: "Amine Aguilal",
-            subtitle: "D\u00e9veloppeur Full-Stack Junior",
-            description: "Python, React.js, PHP/MySQL | E-commerce & Applications"
+    "fr": {
+        "home": {
+            "title": "Amine Aguilal",
+            "subtitle": "Développeur Full-Stack Junior",
+            "description": "Python, React.js, PHP/MySQL | E-commerce & Applications"
         },
-        about: {
-            title: "\u00c0 Propos",
-            p1: "Je suis d\u00e9veloppeur full-stack junior bas\u00e9 au Maroc et titulaire d'un BTS en d\u00e9veloppement informatique. Je m'oriente vers Python, React.js et PHP/MySQL pour le d\u00e9veloppement d'applications et de solutions e-commerce.",
-            p2: "Mon parcours comprend aussi la gestion de projets informatiques, le NLP et le service client. Je suis ouvert aux opportunit\u00e9s pour contribuer \u00e0 des applications web, r\u00e9soudre des probl\u00e8mes concrets et progresser en tant que d\u00e9veloppeur.",
-            skillsTitle: "Comp\u00e9tences & Langues",
-            technical: "Technique",
-            languages: "Langues",
-            langsList: ['Fran\u00e7ais', 'Anglais', 'Arabe']
+        "about": {
+            "title": "À Propos",
+            "p1": "Je suis développeur full-stack junior basé au Maroc et titulaire d'un BTS en développement informatique. Je m'oriente vers Python, React.js et PHP/MySQL pour le développement d'applications et de solutions e-commerce.",
+            "p2": "Mon parcours comprend aussi la science des données, le NLP, l’assistance technique et le service client. Je suis ouvert aux opportunités pour contribuer à des applications web, résoudre des problèmes concrets et progresser en tant que développeur.",
+            "skillsTitle": "Compétences & Langues",
+            "technical": "Technique",
+            "languages": "Langues",
+            "langsList": [
+                "Français",
+                "Anglais",
+                "Arabe"
+            ]
         },
-        experience: {
-            title: "Exp\u00e9rience",
-            jobs: [
+        "experience": {
+            "title": "Expérience",
+            "jobs": [
                 {
-                    role: "\u00c9quipier Polyvalent",
-                    company: "Poulet Rouge",
-                    period: "D\u00e9c 2024 \u2013 Aujourd'hui",
-                    description: "Responsable de la pr\u00e9paration des repas, du service \u00e0 la client\u00e8le et du maintien d'un environnement de travail propre et efficace dans un restaurant \u00e0 fort volume."
+                    "role": "Cadre back-office",
+                    "company": "TELUS Digital AI Data Solutions",
+                    "period": "Juil 2026 – Aujourd’hui",
+                    "details": "Casablanca-Settat, Maroc · Sur site · Temps plein",
+                    "description": ""
                 },
                 {
-                    role: "Assistant Optom\u00e9triste et Vendeur",
-                    company: "LAVUE.CA (Qu\u00e9bec, Canada)",
-                    period: "Oct 2024 \u2013 Sept 2024",
-                    description: "Gestion des dossiers patients, assistance aux examens visuels, conseil client, et gestion des ventes et encaissements. D\u00e9veloppement de comp\u00e9tences en communication et service client."
+                    "role": "Assistance technique",
+                    "company": "Rogers Communications",
+                    "period": "Avr 2026 – Juil 2026",
+                    "details": "Casablanca-Settat, Maroc · Sur site · CDI à temps plein",
+                    "description": ""
                 },
                 {
-                    role: "Charg\u00e9 de Projets TI",
-                    company: "TROUVE TA VOIE (Paris, France)",
-                    period: "Sept 2023 \u2013 Juil 2024",
-                    description: "Conception et impl\u00e9mentation de pipelines NLP (BERT), int\u00e9gration de bases vectorielles (FAISS, ChromaDB), optimisation de la recherche s\u00e9mantique et collaboration technique pour l'int\u00e9gration de solutions IA."
+                    "role": "Chef de quart",
+                    "company": "McDonald's",
+                    "period": "Mars 2026 – Avr 2026",
+                    "details": "Québec, Canada · Sur site · CDI à temps plein",
+                    "description": ""
+                },
+                {
+                    "role": "Équipier",
+                    "company": "Groupe Poulet Rouge",
+                    "period": "Oct 2025 – Avr 2026",
+                    "details": "CDI à temps plein",
+                    "description": "Responsable de la préparation des repas, du service à la clientèle et du maintien d'un environnement de travail propre et efficace dans un restaurant à fort volume."
+                },
+                {
+                    "role": "Assistant en optométrie",
+                    "company": "LAVUE.CA",
+                    "period": "Nov 2024 – Déc 2025",
+                    "details": "Québec, Canada · Sur site · Temps plein",
+                    "description": "Gestion des dossiers patients, assistance aux examens visuels, conseil client, et gestion des ventes et encaissements. Développement de compétences en communication et service client."
+                },
+                {
+                    "role": "Stagiaire en science des données",
+                    "company": "TrouveTaVoie",
+                    "period": "Juin 2023 – Déc 2025",
+                    "details": "Paris · À distance · Stage",
+                    "description": "Conception et implémentation de pipelines NLP (BERT), intégration de bases vectorielles (FAISS, ChromaDB), optimisation de la recherche sémantique et collaboration technique pour l'intégration de solutions IA."
                 }
             ]
         },
-        projects: {
-            title: "Projets Cl\u00e9s",
-            loading: "Chargement des projets...",
-            error: "\u00c9chec du chargement des projets.",
-            viewProject: "Voir sur GitHub",
-            noDescription: "Aucune description fournie.",
-            stars: "Étoiles"
+        "projects": {
+            "title": "Projets Clés",
+            "loading": "Chargement des projets...",
+            "error": "Échec du chargement des projets.",
+            "viewProject": "Voir sur GitHub",
+            "noDescription": "Aucune description fournie.",
+            "stars": "Étoiles"
         },
-        contact: {
-            title: "Me Contacter",
-            description: "Je suis actuellement \u00e0 la recherche de nouvelles opportunit\u00e9s. Si vous avez une question ou souhaitez simplement dire bonjour, je ferai de mon mieux pour vous r\u00e9pondre !",
-            email: "aguilalamine0@gmail.com",
-            phone: "418-575-9959",
-            address: "Maroc"
+        "contact": {
+            "title": "Me Contacter",
+            "description": "Je suis actuellement à la recherche de nouvelles opportunités. Si vous avez une question ou souhaitez simplement dire bonjour, je ferai de mon mieux pour vous répondre !",
+            "email": "aguilalamine0@gmail.com",
+            "phone": "418-575-9959",
+            "address": "Maroc"
         },
-        nav: {
-            home: "Accueil",
-            projects: "Projets",
-            contact: "Contact"
+        "nav": {
+            "home": "Accueil",
+            "projects": "Projets",
+            "contact": "Contact"
+        },
+        "education": {
+            "title": "Formation",
+            "items": [
+                {
+                    "school": "BTS Dsi",
+                    "qualification": "Brevet de technicien supérieur (BTS), informatique",
+                    "period": "Sept 2023 – Sept 2025"
+                },
+                {
+                    "school": "BTS",
+                    "qualification": "Brevet de technicien supérieur (BTS), intelligence artificielle",
+                    "period": "2022 – 2023"
+                },
+                {
+                    "school": "Lycée Technique Anoual",
+                    "qualification": "Baccalauréat technique électrique",
+                    "period": ""
+                }
+            ]
+        },
+        "certifications": {
+            "title": "Certifications",
+            "credentialLabel": "Identifiant",
+            "items": [
+                {
+                    "title": "Programming for Everybody (Getting Started with Python)",
+                    "issuer": "University of Michigan",
+                    "period": "Délivré en déc 2023",
+                    "credential": "GX2PDY26HXTN"
+                },
+                {
+                    "title": "100 Days of Code: The Complete Python Pro Bootcamp for 2023",
+                    "issuer": "Udemy",
+                    "period": "Délivré en nov 2023 · Expiration indiquée : déc 2023",
+                    "credential": "UC-60da7117-6af0-4629-b38f-e04027ba27b6"
+                }
+            ]
         }
     }
 };

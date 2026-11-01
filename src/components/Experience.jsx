@@ -145,13 +145,15 @@ const Experience = () => {
                                 </motion.span>
                             </div>
 
-                            <motion.p
+                            {exp.details && <p style={{ color: 'var(--text-secondary)', marginBottom: '0.75rem', lineHeight: '1.6' }}>{exp.details}</p>}
+
+                            {exp.description && <motion.p
                                 style={{ color: 'var(--text-secondary)', lineHeight: '1.6' }}
                                 initial={{ opacity: 0.8 }}
                                 whileHover={{ opacity: 1 }}
                             >
                                 {exp.description}
-                            </motion.p>
+                            </motion.p>}
                         </motion.div>
                     ))}
                 </motion.div>

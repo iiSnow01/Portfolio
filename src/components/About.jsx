@@ -49,7 +49,7 @@ const About = () => {
                         <div style={{ marginBottom: '1.5rem' }}>
                             <h4 style={{ fontSize: '1rem', color: 'var(--text-tertiary)', marginBottom: '0.5rem' }}>{t.about.technical}</h4>
                             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem' }}>
-                                {['Python', 'React.js', 'PHP', 'MySQL', 'NLP (BERT)', 'Vector Stores (FAISS, ChromaDB)', 'Data Pipelines'].map((skill, index) => (
+                                {['Python', 'React.js', 'PHP', 'MySQL', 'Flask', 'Tkinter', 'NumPy', 'C', 'VB.NET', 'Packet Tracer', 'Git', 'NLP (BERT)', 'Vector Stores (FAISS, ChromaDB)', 'Data Pipelines'].map((skill, index) => (
                                     <span key={index} style={{ padding: '0.5rem 1rem', background: 'rgba(59, 130, 246, 0.1)', color: 'var(--accent-primary)', borderRadius: '100px', fontSize: '0.9rem', border: '1px solid rgba(59, 130, 246, 0.2)' }}>
                                         {skill}
                                     </span>
