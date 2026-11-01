@@ -2,13 +2,13 @@ export const translations = {
     en: {
         home: {
             title: "Amine Aguilal",
-            subtitle: "IT Project Manager & Developer",
-            description: "Specializing in NLP, Data Pipelines, and Digital Solutions."
+            subtitle: "Junior Full-Stack Developer",
+            description: "Python, React.js, PHP/MySQL | E-commerce & Applications"
         },
         about: {
             title: "About Me",
-            p1: "A graduate with a BTS in Software Development, I am passionate about new technologies and problem solving. With a diverse background ranging from IT Project Management to Optometry Assistance, I have developed unique versatility.",
-            p2: "I am looking to join a dynamic company where I can use my technical skills (NLP, Vector Stores, Data Pipelines), my rigor, and my interpersonal skills to contribute to the success of ambitious IT projects.",
+            p1: "I am a junior full-stack developer based in Morocco with a BTS in Software Development. My focus is Python, React.js, and PHP/MySQL for e-commerce and application development.",
+            p2: "My background also includes IT project management, NLP, and customer service. I am open to opportunities where I can contribute to web applications, solve practical problems, and continue growing as a developer.",
             skillsTitle: "Skills & Languages",
             technical: "Technical",
             languages: "Languages",
@@ -50,7 +50,7 @@ export const translations = {
             description: "I am currently open to new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!",
             email: "aguilalamine0@gmail.com",
             phone: "418-575-9959",
-            address: "7947 avenue Hoffman, Quebec, Canada"
+            address: "Morocco"
         },
         nav: {
             home: "Home",
@@ -61,13 +61,13 @@ export const translations = {
     fr: {
         home: {
             title: "Amine Aguilal",
-            subtitle: "Charg\u00e9 de Projets TI & D\u00e9veloppeur",
-            description: "Sp\u00e9cialis\u00e9 en NLP, Pipelines de Donn\u00e9es et Solutions Digitales."
+            subtitle: "D\u00e9veloppeur Full-Stack Junior",
+            description: "Python, React.js, PHP/MySQL | E-commerce & Applications"
         },
         about: {
             title: "\u00c0 Propos",
-            p1: "Dipl\u00f4m\u00e9 d\u2019un BTS en d\u00e9veloppement informatique, je suis passionn\u00e9 par les nouvelles technologies et la r\u00e9solution de probl\u00e8mes. Fort d\u2019une exp\u00e9rience vari\u00e9e allant de la gestion de projets TI \u00e0 l'assistance optom\u00e9trique, j'ai d\u00e9velopp\u00e9 une polyvalence unique.",
-            p2: "Je souhaite int\u00e9grer une entreprise dynamique o\u00f9 je pourrai mettre \u00e0 profit mes comp\u00e9tences techniques (NLP, Vector Stores, Pipeline de donn\u00e9es), ma rigueur et mon sens du relationnel pour contribuer au succ\u00e8s de projets informatiques ambitieux.",
+            p1: "Je suis d\u00e9veloppeur full-stack junior bas\u00e9 au Maroc et titulaire d'un BTS en d\u00e9veloppement informatique. Je m'oriente vers Python, React.js et PHP/MySQL pour le d\u00e9veloppement d'applications et de solutions e-commerce.",
+            p2: "Mon parcours comprend aussi la gestion de projets informatiques, le NLP et le service client. Je suis ouvert aux opportunit\u00e9s pour contribuer \u00e0 des applications web, r\u00e9soudre des probl\u00e8mes concrets et progresser en tant que d\u00e9veloppeur.",
             skillsTitle: "Comp\u00e9tences & Langues",
             technical: "Technique",
             languages: "Langues",
@@ -109,7 +109,7 @@ export const translations = {
             description: "Je suis actuellement \u00e0 la recherche de nouvelles opportunit\u00e9s. Si vous avez une question ou souhaitez simplement dire bonjour, je ferai de mon mieux pour vous r\u00e9pondre !",
             email: "aguilalamine0@gmail.com",
             phone: "418-575-9959",
-            address: "7947 avenue Hoffman, Quebec, Canada"
+            address: "Maroc"
         },
         nav: {
             home: "Accueil",
