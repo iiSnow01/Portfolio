@@ -49,6 +49,21 @@ const Contact = () => {
                                 {t.contact.email}
                             </a>
 
+                            <a
+                                href="https://www.linkedin.com/in/amine-aguilal-7b758425a/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                style={{
+                                    padding: '0.8rem 1.5rem',
+                                    border: '1px solid var(--accent-primary)',
+                                    borderRadius: '50px',
+                                    color: 'var(--accent-primary)',
+                                    fontWeight: '600'
+                                }}
+                            >
+                                LinkedIn
+                            </a>
+
                             <div style={{ color: 'var(--text-tertiary)' }}>
                                 <p>{t.contact.phone}</p>
                                 <p>{t.contact.address}</p>
