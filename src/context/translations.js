@@ -77,8 +77,8 @@ export const translations = {
             "title": "Get In Touch",
             "description": "I am currently open to new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!",
             "email": "aguilalamine0@gmail.com",
-            "phone": "418-575-9959",
-            "address": "Morocco"
+            "phone": "+212 772 132 833",
+            "address": "Casablanca, Morocco"
         },
         "nav": {
             "home": "Home",
@@ -202,8 +202,8 @@ export const translations = {
             "title": "Me Contacter",
             "description": "Je suis actuellement à la recherche de nouvelles opportunités. Si vous avez une question ou souhaitez simplement dire bonjour, je ferai de mon mieux pour vous répondre !",
             "email": "aguilalamine0@gmail.com",
-            "phone": "418-575-9959",
-            "address": "Maroc"
+            "phone": "+212 772 132 833",
+            "address": "Casablanca, Maroc"
         },
         "nav": {
             "home": "Accueil",
