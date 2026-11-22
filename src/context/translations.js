@@ -3,6 +3,7 @@ export const translations = {
         "home": {
             "title": "Amine Aguilal",
             "subtitle": "Junior Full-Stack Developer",
+            "downloadResume": "Download résumé (PDF)",
             "description": "Python, React.js, PHP/MySQL | E-commerce & Applications"
         },
         "about": {
@@ -128,6 +129,7 @@ export const translations = {
         "home": {
             "title": "Amine Aguilal",
             "subtitle": "Développeur Full-Stack Junior",
+            "downloadResume": "Télécharger le CV (PDF)",
             "description": "Python, React.js, PHP/MySQL | E-commerce & Applications"
         },
         "about": {
