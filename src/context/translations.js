@@ -4,6 +4,7 @@ export const translations = {
             "title": "Amine Aguilal",
             "subtitle": "Junior Full-Stack Developer",
             "downloadResume": "Download résumé (PDF)",
+            "technicalWork": "At TrouveTaVoie, I built NLP pipelines with BERT and integrated FAISS and ChromaDB for semantic search.",
             "description": "Python, React.js, PHP/MySQL | E-commerce & Applications"
         },
         "about": {
@@ -27,14 +28,14 @@ export const translations = {
                     "company": "TELUS Digital AI Data Solutions",
                     "period": "Jul 2026 – Present",
                     "details": "Casablanca-Settat, Morocco · On-site · Full-time",
-                    "description": ""
+                    "description": "Handled back-office cases, documented findings and followed up on outstanding requests."
                 },
                 {
                     "role": "Technical Support",
                     "company": "Rogers Communications",
                     "period": "Apr 2026 – Jul 2026",
                     "details": "Casablanca-Settat, Morocco · On-site · Permanent full-time",
-                    "description": ""
+                    "description": "Troubleshot customer service issues and explained the steps needed to resolve them."
                 },
                 {
                     "role": "Shift Manager",
@@ -48,14 +49,14 @@ export const translations = {
                     "company": "Groupe Poulet Rouge",
                     "period": "Oct 2025 – Apr 2026",
                     "details": "Permanent full-time",
-                    "description": "Responsible for meal preparation, customer service, and maintaining a clean and efficient work environment in a high-volume restaurant."
+                    "description": "Prepared meals and supported customers in a high-volume restaurant."
                 },
                 {
                     "role": "Optometric Assistant",
                     "company": "LAVUE.CA",
                     "period": "Nov 2024 – Dec 2025",
                     "details": "Quebec, Canada · On-site · Full-time",
-                    "description": "Patient record management, visual exam assistance, customer advice, and sales/cash management. Developed communication and customer service skills."
+                    "description": "Managed patient records and assisted with visual exams and customer service."
                 },
                 {
                     "role": "Data Science Intern",
@@ -130,6 +131,7 @@ export const translations = {
             "title": "Amine Aguilal",
             "subtitle": "Développeur Full-Stack Junior",
             "downloadResume": "Télécharger le CV (PDF)",
+            "technicalWork": "Chez TrouveTaVoie, j’ai développé des pipelines NLP avec BERT et intégré FAISS et ChromaDB pour la recherche sémantique.",
             "description": "Python, React.js, PHP/MySQL | E-commerce & Applications"
         },
         "about": {
@@ -153,14 +155,14 @@ export const translations = {
                     "company": "TELUS Digital AI Data Solutions",
                     "period": "Juil 2026 – Aujourd’hui",
                     "details": "Casablanca-Settat, Maroc · Sur site · Temps plein",
-                    "description": ""
+                    "description": "Traitement de dossiers en back-office, rédaction de notes et suivi des demandes en cours."
                 },
                 {
                     "role": "Assistance technique",
                     "company": "Rogers Communications",
                     "period": "Avr 2026 – Juil 2026",
                     "details": "Casablanca-Settat, Maroc · Sur site · CDI à temps plein",
-                    "description": ""
+                    "description": "Diagnostic de problèmes techniques et accompagnement des clients dans leur résolution."
                 },
                 {
                     "role": "Chef de quart",
@@ -174,14 +176,14 @@ export const translations = {
                     "company": "Groupe Poulet Rouge",
                     "period": "Oct 2025 – Avr 2026",
                     "details": "CDI à temps plein",
-                    "description": "Responsable de la préparation des repas, du service à la clientèle et du maintien d'un environnement de travail propre et efficace dans un restaurant à fort volume."
+                    "description": "Préparation des repas et service à la clientèle dans un restaurant à fort volume."
                 },
                 {
                     "role": "Assistant en optométrie",
                     "company": "LAVUE.CA",
                     "period": "Nov 2024 – Déc 2025",
                     "details": "Québec, Canada · Sur site · Temps plein",
-                    "description": "Gestion des dossiers patients, assistance aux examens visuels, conseil client, et gestion des ventes et encaissements. Développement de compétences en communication et service client."
+                    "description": "Gestion des dossiers patients, assistance aux examens visuels et service à la clientèle."
                 },
                 {
                     "role": "Stagiaire en science des données",

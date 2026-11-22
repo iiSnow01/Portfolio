@@ -18,7 +18,8 @@ export default function Home() {
                 <p className="eyebrow">{t.home.subtitle}</p>
                 <h1>Amine<br /><span>Aguilal.</span></h1>
                 <p className="hero-description">{fr ? 'Du code aux applications. Je développe avec Python et React, avec un intérêt pour les outils utiles et la data.' : 'From code to applications. I build with Python and React, with a focus on useful tools and data.'}</p>
-                <div className="hero-actions"><a className="button primary" href="#projects">{fr ? 'Voir mes projets' : 'Explore projects'} <span>↗</span></a><a className="button" href="#contact">{fr ? 'Me contacter' : 'Get in touch'} <span>↗</span></a><ResumeLink className="button" /></div>
+                <p className="hero-experience">{t.home.technicalWork}</p>
+                <div className="hero-actions"><a className="button primary" href="#projects">{fr ? 'Voir mes projets' : 'Explore projects'}</a><a className="button" href="#contact">{fr ? 'Me contacter' : 'Get in touch'}</a><ResumeLink className="button" /></div>
                 <p className="hero-location">Casablanca, {fr ? 'Maroc' : 'Morocco'} <span>·</span> Python / React.js / PHP / MySQL</p>
             </motion.div>
             <motion.div className="hero-visual" aria-hidden="true" initial={reduced ? false : { opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.7 }}>

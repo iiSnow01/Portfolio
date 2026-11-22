@@ -1,33 +1,147 @@
 import { useApp } from '../context/AppContext'
 
+const github = 'https://github.com/iiSnow01/'
+const publicAssets = import.meta.env.BASE_URL
+
 const projects = [
-    { id: 'Cloud', title: 'Cloudgram', category: 'DESKTOP / PYTHON', tags: ['Python', 'PyQt6', 'SQLite', 'Telethon'],
-      en: 'A desktop file manager built around Telegram storage, with asynchronous transfers and a searchable local file index.',
-      fr: 'Un gestionnaire de fichiers desktop utilisant le stockage Telegram, avec transferts asynchrones et index local consultable.',
-      motif: ['cloudgram/', '├── ui/', '├── core/', '└── db/'], image: 'https://raw.githubusercontent.com/iiSnow01/Cloud/main/screenshot.png' },
-    { id: 'Resume-Parser', title: 'Resume Parser', category: 'AI / DOCUMENTS', tags: ['Python', 'Gemini', 'Docker', 'Jupyter'],
-      en: 'A Python command-line tool that extracts structured JSON from résumé PDFs with Gemini. It includes an offline example with synthetic data.',
-      fr: 'Un outil Python en ligne de commande qui extrait des données JSON structurées de CV PDF avec Gemini. Un exemple hors ligne utilise des données fictives.',
-      motif: ['resume.pdf', '↓ language model', '{ name, skills,', '  experience }'],
-      example: 'https://github.com/iiSnow01/Resume-Parser/blob/main/examples/expected.json' },
-    { id: 'CvGenius-', title: 'CV Genius', category: 'WEB / REACT', tags: ['React', 'Vite', 'CSS', 'Framer Motion'],
-      en: 'A CV editor with real-time preview, multiple templates, and a browser print dialog for saving as PDF. Includes a simulated LinkedIn import workflow.',
-      fr: 'Un éditeur de CV avec aperçu en temps réel, plusieurs modèles et enregistrement en PDF via la boîte de dialogue d’impression du navigateur. Inclut un import LinkedIn simulé.',
-      motif: ['<CVEditor />', '  ↳ live preview', '  ↳ templates', '  ↳ PDF export'], image: 'https://raw.githubusercontent.com/iiSnow01/CvGenius-/master/preview.png' }
+    {
+        id: 'Resume-Parser',
+        title: 'Resume Parser',
+        category: { en: 'AI / DOCUMENTS', fr: 'IA / DOCUMENTS' },
+        tags: ['Python', 'Gemini', 'Docker', 'Jupyter'],
+        description: {
+            en: 'I built a Python command-line tool that turns résumé PDFs into structured JSON with Gemini. The bundled example runs offline with synthetic data.',
+            fr: 'J’ai créé un outil Python qui extrait des données JSON de CV PDF avec Gemini. L’exemple fourni fonctionne hors ligne avec des données fictives.'
+        },
+        motif: ['resume.pdf', '→ structured JSON', '{ name, skills,', '  experience }'],
+        evidence: [
+            { href: github + 'Resume-Parser/blob/main/examples/sample-resume.pdf', en: 'Sample PDF', fr: 'Exemple PDF' },
+            { href: github + 'Resume-Parser/blob/main/examples/expected.json', en: 'Sample JSON', fr: 'Exemple JSON' }
+        ]
+    },
+    {
+        id: 'Cloud',
+        title: 'Cloudgram',
+        category: { en: 'DESKTOP / PYTHON', fr: 'BUREAU / PYTHON' },
+        tags: ['Python', 'PyQt6', 'SQLite', 'Telethon'],
+        description: {
+            en: 'I built a desktop file manager for Telegram storage with asynchronous transfers and a searchable SQLite index.',
+            fr: 'J’ai créé un gestionnaire de fichiers de bureau pour le stockage Telegram, avec transferts asynchrones et recherche dans un index SQLite.'
+        },
+        image: publicAssets + 'cloudgram-search.png',
+        alt: { en: 'Cloudgram showing two sample files matching the search “report”', fr: 'Cloudgram affiche deux fichiers fictifs correspondant à la recherche « report »' },
+        motif: ['Cloudgram', 'Search: report', 'report-q1.pdf', 'report-q2.pdf'],
+        evidence: [{ href: github + 'Cloud#offline-search-example', en: 'Offline search example', fr: 'Exemple de recherche hors ligne' }]
+    },
+    {
+        id: 'CvGenius-',
+        title: 'CV Genius',
+        category: { en: 'WEB / REACT', fr: 'WEB / REACT' },
+        tags: ['React', 'Vite', 'CSS', 'Framer Motion'],
+        description: {
+            en: 'I built a React résumé editor with live preview, two templates, and browser-based PDF export. The LinkedIn import is simulated.',
+            fr: 'J’ai créé un éditeur de CV React avec aperçu en direct, deux modèles et export PDF via le navigateur. L’import LinkedIn est simulé.'
+        },
+        image: publicAssets + 'cv-genius-editor.jpg',
+        alt: { en: 'CV Genius editor with its form and a sample résumé preview', fr: 'Éditeur CV Genius avec son formulaire et l’aperçu d’un CV fictif' },
+        motif: ['CV Editor', 'Live preview', 'Modern / Creative', 'Print / Save as PDF'],
+        evidence: [{ href: publicAssets + 'cv-genius-editor.jpg', en: 'View editor screenshot', fr: 'Voir la capture de l’éditeur' }]
+    }
+]
+
+const archive = [
+    {
+        id: 'se7ti', title: 'Se7ti',
+        status: { en: 'Multilingual site', fr: 'Site multilingue' },
+        description: {
+            en: 'I built the multilingual navigation and searchable directory for a static site in Darija, Arabic, and French.',
+            fr: 'J’ai développé la navigation multilingue et la recherche pour un site statique en darija, arabe et français.'
+        }
+    },
+    {
+        id: 'gtchicken-', title: 'GT Chicken',
+        status: { en: 'Static demo', fr: 'Démo statique' },
+        description: {
+            en: 'I built a Darija product catalogue with a right-to-left layout and a contact form that can be tried locally.',
+            fr: 'J’ai développé un catalogue en darija avec une interface de droite à gauche et un formulaire de contact de démonstration.'
+        }
+    }
 ]
 
 export default function Projects() {
     const { lang } = useApp()
     const fr = lang === 'fr'
-    return <section className="section-padding container" id="projects">
-        <div className="section-heading"><div><p className="eyebrow">01 / {fr ? 'SÉLECTION' : 'SELECTED WORK'}</p><h2>{fr ? 'Du code, du concret.' : 'Code into practice.'}</h2></div><a className="text-link" href="https://github.com/iiSnow01?tab=repositories" target="_blank" rel="noopener noreferrer">{fr ? 'Tous les dépôts' : 'All repositories'} ↗</a></div>
-        <div className="project-grid">{projects.map((p, index) => <article className="project-card" key={p.id}>
-            <div className={`project-art art-${index}`}>
-                <pre aria-hidden="true">{p.motif.join('\n')}</pre>
-                {p.image && <img src={p.image} alt={fr ? `Interface de ${p.title}` : `${p.title} interface`} loading="lazy" onError={e => { e.currentTarget.hidden = true }} />}
-                <span className="project-number">0{index + 1}</span>
+    const codeLabel = fr ? 'Voir le code' : 'View source'
+
+    return (
+        <section className="section-padding container" id="projects">
+            <div className="section-heading">
+                <div>
+                    <p className="eyebrow">{fr ? 'SÉLECTION' : 'SELECTED WORK'}</p>
+                    <h2>{fr ? 'Du code, du concret.' : 'Code into practice.'}</h2>
+                </div>
+                <a className="text-link" href="https://github.com/iiSnow01?tab=repositories" target="_blank" rel="noopener noreferrer">
+                    {fr ? 'Tous les dépôts' : 'All repositories'}
+                </a>
             </div>
-            <div className="project-content"><p className="eyebrow">{p.category}</p><h3>{p.title}</h3><p>{p[lang]}</p><ul className="tags" aria-label={fr ? 'Technologies utilisées' : 'Technologies used'}>{p.tags.map(tag => <li key={tag}>{tag}</li>)}</ul><a className="project-link" href={`https://github.com/iiSnow01/${p.id}`} target="_blank" rel="noopener noreferrer" aria-label={`${fr ? 'Voir le code de' : 'View code for'} ${p.title}`}>{fr ? 'Explorer le code' : 'Explore the code'} <span>↗</span></a>{p.example && <a className="project-link" href={p.example} target="_blank" rel="noopener noreferrer">{fr ? 'Voir un exemple JSON' : 'View sample JSON'} <span aria-hidden="true">↗</span></a>}</div>
-        </article>)}</div>
-    </section>
+            <div className="project-grid">
+                {projects.map((project, index) => (
+                    <article className="project-card" key={project.id}>
+                        <div className={'project-art art-' + index}>
+                            <pre aria-hidden="true">{project.motif.join('\n')}</pre>
+                            {project.image && (
+                                <img
+                                    src={project.image}
+                                    alt={project.alt[lang]}
+                                    loading="lazy"
+                                    onError={event => { event.currentTarget.hidden = true }}
+                                />
+                            )}
+                        </div>
+                        <div className="project-content">
+                            <p className="eyebrow">{project.category[lang]}</p>
+                            <h3>{project.title}</h3>
+                            <p>{project.description[lang]}</p>
+                            <ul className="tags" aria-label={fr ? 'Technologies utilisées' : 'Technologies used'}>
+                                {project.tags.map(tag => <li key={tag}>{tag}</li>)}
+                            </ul>
+                            <div className="project-actions">
+                                <a
+                                    href={github + project.id}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label={codeLabel + ' · ' + project.title}
+                                >
+                                    {codeLabel}
+                                </a>
+                                {project.evidence.map(link => (
+                                    <a href={link.href} key={link.href} target="_blank" rel="noopener noreferrer">{link[lang]}</a>
+                                ))}
+                            </div>
+                        </div>
+                    </article>
+                ))}
+            </div>
+            <section className="project-archive" id="project-archive" aria-labelledby="archive-title">
+                <h2 id="archive-title">{fr ? 'Autres projets' : 'Other projects'}</h2>
+                <ul className="archive-grid">
+                    {archive.map(project => (
+                        <li key={project.id}>
+                            <p className="eyebrow">{project.status[lang]}</p>
+                            <h3>{project.title}</h3>
+                            <p>{project.description[lang]}</p>
+                            <a
+                                href={github + project.id}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label={codeLabel + ' · ' + project.title}
+                            >
+                                {codeLabel}
+                            </a>
+                        </li>
+                    ))}
+                </ul>
+            </section>
+        </section>
+    )
 }

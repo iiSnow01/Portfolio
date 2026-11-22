@@ -19,6 +19,6 @@ Production output is written to `dist/`. The existing website is https://snowow.
 ## Content
 
 - `src/context/translations.js`: English and French profile, employment dates, education, certifications, and contact details.
-- `src/components/Projects.jsx`: Three featured public repositories with descriptions and technology tags. Screenshot assets are loaded from their source repositories, with a local code illustration fallback.
+- `src/components/Projects.jsx`: Three featured projects with source links and screenshots or reproducible examples, plus an archive for smaller projects. Screenshots live in `public/`.
 
-Project cards link to source code; no unverified live demos are advertised. CV Genius's LinkedIn import is explicitly described as simulated.
+The portfolio links to the relevant source and sample assets. CV Genius describes its LinkedIn import as simulated, and GT Chicken labels its contact form as a local demo.

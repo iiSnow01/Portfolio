@@ -19,6 +19,6 @@ export default function Layout() {
             </div>
         </nav></header>
         <main id="main"><Outlet /></main>
-        <footer className="container site-footer"><a className="wordmark" href="#home">amine<span>.</span></a><p>© {new Date().getFullYear()} Amine Aguilal</p><a href="https://github.com/iiSnow01" target="_blank" rel="noopener noreferrer">GitHub ↗</a></footer>
+        <footer className="container site-footer"><a className="wordmark" href="#home">amine<span>.</span></a><p>© {new Date().getFullYear()} Amine Aguilal</p><a href="https://github.com/iiSnow01" target="_blank" rel="noopener noreferrer">GitHub</a></footer>
     </div>
 }
