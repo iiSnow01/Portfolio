@@ -5,13 +5,14 @@ const projects = [
       en: 'A desktop file manager built around Telegram storage, with asynchronous transfers and a searchable local file index.',
       fr: 'Un gestionnaire de fichiers desktop utilisant le stockage Telegram, avec transferts asynchrones et index local consultable.',
       motif: ['cloudgram/', '├── ui/', '├── core/', '└── db/'], image: 'https://raw.githubusercontent.com/iiSnow01/Cloud/main/screenshot.png' },
-    { id: 'Resume-Parser', title: 'Resume Parser', category: 'AI / DOCUMENTS', tags: ['Python', 'Gemini', 'OpenAI', 'Jupyter'],
-      en: 'Resume parsing notebooks exploring how language models can extract structured information from PDF resumes.',
-      fr: 'Des notebooks qui explorent l’extraction d’informations structurées depuis des CV PDF à l’aide de modèles de langage.',
-      motif: ['resume.pdf', '↓ language model', '{ name, skills,', '  experience }'] },
+    { id: 'Resume-Parser', title: 'Resume Parser', category: 'AI / DOCUMENTS', tags: ['Python', 'Gemini', 'Docker', 'Jupyter'],
+      en: 'A Python command-line tool that extracts structured JSON from résumé PDFs with Gemini. It includes an offline example with synthetic data.',
+      fr: 'Un outil Python en ligne de commande qui extrait des données JSON structurées de CV PDF avec Gemini. Un exemple hors ligne utilise des données fictives.',
+      motif: ['resume.pdf', '↓ language model', '{ name, skills,', '  experience }'],
+      example: 'https://github.com/iiSnow01/Resume-Parser/blob/main/examples/expected.json' },
     { id: 'CvGenius-', title: 'CV Genius', category: 'WEB / REACT', tags: ['React', 'Vite', 'CSS', 'Framer Motion'],
-      en: 'A CV editor with real-time preview, multiple templates and PDF export. Includes a simulated LinkedIn import workflow.',
-      fr: 'Un éditeur de CV avec aperçu en temps réel, plusieurs modèles et export PDF. Inclut un import LinkedIn simulé.',
+      en: 'A CV editor with real-time preview, multiple templates, and a browser print dialog for saving as PDF. Includes a simulated LinkedIn import workflow.',
+      fr: 'Un éditeur de CV avec aperçu en temps réel, plusieurs modèles et enregistrement en PDF via la boîte de dialogue d’impression du navigateur. Inclut un import LinkedIn simulé.',
       motif: ['<CVEditor />', '  ↳ live preview', '  ↳ templates', '  ↳ PDF export'], image: 'https://raw.githubusercontent.com/iiSnow01/CvGenius-/master/preview.png' }
 ]
 
@@ -26,7 +27,7 @@ export default function Projects() {
                 {p.image && <img src={p.image} alt={fr ? `Interface de ${p.title}` : `${p.title} interface`} loading="lazy" onError={e => { e.currentTarget.hidden = true }} />}
                 <span className="project-number">0{index + 1}</span>
             </div>
-            <div className="project-content"><p className="eyebrow">{p.category}</p><h3>{p.title}</h3><p>{p[lang]}</p><ul className="tags" aria-label={fr ? 'Technologies utilisées' : 'Technologies used'}>{p.tags.map(tag => <li key={tag}>{tag}</li>)}</ul><a className="project-link" href={`https://github.com/iiSnow01/${p.id}`} target="_blank" rel="noopener noreferrer" aria-label={`${fr ? 'Voir le code de' : 'View code for'} ${p.title}`}>{fr ? 'Explorer le code' : 'Explore the code'} <span>↗</span></a></div>
+            <div className="project-content"><p className="eyebrow">{p.category}</p><h3>{p.title}</h3><p>{p[lang]}</p><ul className="tags" aria-label={fr ? 'Technologies utilisées' : 'Technologies used'}>{p.tags.map(tag => <li key={tag}>{tag}</li>)}</ul><a className="project-link" href={`https://github.com/iiSnow01/${p.id}`} target="_blank" rel="noopener noreferrer" aria-label={`${fr ? 'Voir le code de' : 'View code for'} ${p.title}`}>{fr ? 'Explorer le code' : 'Explore the code'} <span>↗</span></a>{p.example && <a className="project-link" href={p.example} target="_blank" rel="noopener noreferrer">{fr ? 'Voir un exemple JSON' : 'View sample JSON'} <span aria-hidden="true">↗</span></a>}</div>
         </article>)}</div>
     </section>
 }

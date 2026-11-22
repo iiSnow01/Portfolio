@@ -7,7 +7,7 @@ export const translations = {
         },
         "about": {
             "title": "About Me",
-            "p1": "I am a junior full-stack developer based in Morocco with a BTS in Software Development. My focus is Python, React.js, and PHP/MySQL for e-commerce and application development.",
+            "p1": "I am a junior full-stack developer based in Morocco with a BTS in artificial intelligence. My focus is Python, React.js, and PHP/MySQL for e-commerce and application development.",
             "p2": "My background also includes data science, NLP, technical support, and customer service. I am open to opportunities where I can contribute to web applications, solve practical problems, and continue growing as a developer.",
             "skillsTitle": "Skills & Languages",
             "technical": "Technical",
@@ -89,13 +89,13 @@ export const translations = {
             "title": "Education",
             "items": [
                 {
-                    "school": "BTS Dsi",
-                    "qualification": "Brevet de technicien supérieur (BTS), Computer Science",
+                    "school": "BTS DSI",
+                    "qualification": "Studies in software development",
                     "period": "Sep 2023 – Sep 2025"
                 },
                 {
                     "school": "BTS",
-                    "qualification": "Brevet de technicien supérieur (BTS), Artificial Intelligence",
+                    "qualification": "Brevet de technicien supérieur (BTS) in artificial intelligence",
                     "period": "2022 – 2023"
                 },
                 {
@@ -132,7 +132,7 @@ export const translations = {
         },
         "about": {
             "title": "À Propos",
-            "p1": "Je suis développeur full-stack junior basé au Maroc et titulaire d'un BTS en développement informatique. Je m'oriente vers Python, React.js et PHP/MySQL pour le développement d'applications et de solutions e-commerce.",
+            "p1": "Je suis développeur full-stack junior basé au Maroc et titulaire d’un BTS en intelligence artificielle. Je m'oriente vers Python, React.js et PHP/MySQL pour le développement d'applications et de solutions e-commerce.",
             "p2": "Mon parcours comprend aussi la science des données, le NLP, l’assistance technique et le service client. Je suis ouvert aux opportunités pour contribuer à des applications web, résoudre des problèmes concrets et progresser en tant que développeur.",
             "skillsTitle": "Compétences & Langues",
             "technical": "Technique",
@@ -214,13 +214,13 @@ export const translations = {
             "title": "Formation",
             "items": [
                 {
-                    "school": "BTS Dsi",
-                    "qualification": "Brevet de technicien supérieur (BTS), informatique",
+                    "school": "BTS DSI",
+                    "qualification": "Études en développement informatique",
                     "period": "Sept 2023 – Sept 2025"
                 },
                 {
                     "school": "BTS",
-                    "qualification": "Brevet de technicien supérieur (BTS), intelligence artificielle",
+                    "qualification": "Brevet de technicien supérieur (BTS) en intelligence artificielle",
                     "period": "2022 – 2023"
                 },
                 {
